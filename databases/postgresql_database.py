@@ -63,6 +63,11 @@ def create_postgresql_database(subscription_id,resource_group_name,location,serv
     result.result()
     print("created azure database for postgresql server")
 
+# Create a new PostgreSQL database 
+    database_name='huehweduehwuewbcuwebw'
+    database = postgresql_client.databases.begin_create_or_update(resource_group_name,server_name,database_name,parameters=server) 
+    print('PostgreSQL database {} created.'.format(database)) 
+
 def delete_postgresql_database(subscription_id,resource_group_name,server_name,database_name):
     
 

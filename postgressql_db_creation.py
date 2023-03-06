@@ -25,5 +25,3 @@ sku_name=get_parameter("C:\\Users\\Public\\azure_sdk_temp\\azure_sdk\\parameter.
 
 
 create_postgresql_database(subscription_id,resource_group_name,location,server_name,administrator_login,administrator_login_password,database_name)
-
-
