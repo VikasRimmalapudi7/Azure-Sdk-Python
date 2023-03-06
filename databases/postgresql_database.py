@@ -3,7 +3,7 @@ from azure.mgmt.rdbms.postgresql.models import *
 from azure.identity import DefaultAzureCredential
 from azure.mgmt.resource import ResourceManagementClient
 
-def create_postgresql_database(subscription_id,resource_group_name,location,server_name,admin_login,admin_password,sku_name):
+def create_postgresql_database(subscription_id,resource_group_name,location,server_name,admin_login,admin_password,database_name):
     credential = DefaultAzureCredential()
 
 # Infrastructure encryption configuration
@@ -64,7 +64,6 @@ def create_postgresql_database(subscription_id,resource_group_name,location,serv
     print("created azure database for postgresql server")
 
 # Create a new PostgreSQL database 
-    database_name='huehweduehwuewbcuwebw'
     database = postgresql_client.databases.begin_create_or_update(resource_group_name,server_name,database_name,parameters=server) 
     print('PostgreSQL database {} created.'.format(database)) 
 
