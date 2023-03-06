@@ -19,8 +19,17 @@ vm_offer WindowsServer
 vm_sku 2019-datacenter
 vm_version latest
 vm_size Standard_D2lds_v5
+
+
+
 mysql_server_name mysqlserverdbdemo-123456
 mysql_administrator_login server
 mysql_administrator_login_password vikas@123
 mysql_database_name sdk_database
 mysql_sku_name B_Gen5_2
+
+postgresql_server_name postgresqlserverdbdemo-123456
+postgresql_administrator_login server
+postgresql_administrator_login_password vikas@123
+postgresql_database_name sdk_database
+postgresql_sku_name B_Gen5_2
