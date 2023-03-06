@@ -5,6 +5,7 @@ from azure.mgmt.rdbms.mysql.models import (
     ServerForCreate, 
      ServerPropertiesForDefaultCreate,
     StorageProfile)
+import mysql.connector
 
 def create_mysql_database(subscription_id,resource_group_name,location,server_name,admin_login,admin_password,database_name,sku_name):
 # Azure subscription ID
@@ -67,15 +68,29 @@ def create_mysql_database(subscription_id,resource_group_name,location,server_na
     parameters=server)
     result.result()
     print("created azure database for mysql server")
+    hostname = server_name+".mysql.database.azure.com"
+    username = admin_login+"@"+server_name
+
+# Connect to the server
+    cnx = mysql.connector.connect(
+    host=hostname,
+    user=username,
+    password=password
+)
+
+# Create the database
+    cursor = cnx.cursor()
+    create_db_query = f"CREATE DATABASE IF NOT EXISTS {database_name}"
+    cursor.execute(create_db_query)
+    cnx.commit()
+
+    print(f"MySQL database '{database_name}' created successfully!")
 
 
 
 
 def delete_mysql_database(subscription_id,resource_group_name,server_name,database_name):
-    
-
-
-
+ 
 # Authenticate with the Azure management API
     credential = DefaultAzureCredential()
     mysql_client = MySQLManagementClient(credential, subscription_id)
