@@ -6,7 +6,7 @@ from azure.mgmt.storage import StorageManagementClient
 import time
 
 def create_vm(subscription_id,
-              RESOURCE_GROUP_NAME,
+              resource_group_name,
               LOCATION,
               VNET_NAME,
               SUBNET_NAME,
@@ -49,7 +49,7 @@ def create_vm(subscription_id,
 
     # Provision the resource group.
     rg_result = resource_client.resource_groups.create_or_update(
-        RESOURCE_GROUP_NAME, {"location": LOCATION}
+        resource_group_name, {"location": LOCATION}
     )
 
     print(
@@ -75,7 +75,7 @@ def create_vm(subscription_id,
     time.sleep(15)
     # Provision the virtual network and wait for completion
     poller = network_client.virtual_networks.begin_create_or_update(
-        RESOURCE_GROUP_NAME,
+        resource_group_name,
         VNET_NAME,
         {
             "location": LOCATION,
@@ -92,7 +92,7 @@ def create_vm(subscription_id,
     # Step 3: Provision the subnet and wait for completion
     time.sleep(15)
     poller = network_client.subnets.begin_create_or_update(
-        RESOURCE_GROUP_NAME,
+        resource_group_name,
         VNET_NAME,
         SUBNET_NAME,
         {"address_prefix": sub_address_prefix},
@@ -106,7 +106,7 @@ def create_vm(subscription_id,
     #time.sleep(20)
     # Step 4: Provision an IP address and wait for completion
     poller = network_client.public_ip_addresses.begin_create_or_update(
-        RESOURCE_GROUP_NAME,
+        resource_group_name,
         IP_NAME,
         {
             "location": LOCATION,
@@ -125,7 +125,7 @@ def create_vm(subscription_id,
     #time.sleep(15)
     # Step 5: Provision the network interface client
     poller = network_client.network_interfaces.begin_create_or_update(
-        RESOURCE_GROUP_NAME,
+        resource_group_name,
         NIC_NAME,
         {
             "location": LOCATION,
@@ -160,7 +160,7 @@ def create_vm(subscription_id,
     # and a default virtual network/subnet.
 
     poller = compute_client.virtual_machines.begin_create_or_update(
-        RESOURCE_GROUP_NAME,
+        resource_group_name,
         VM_NAME,
         {
             "location": LOCATION,

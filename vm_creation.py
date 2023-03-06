@@ -17,21 +17,21 @@ def get_parameter(filename, required_parameter):
 
 # Create Virtual Machine
 subscription_id = get_parameter("C:\\Users\\Public\\azure_sdk_temp\\azure_sdk\\parameter.dev",'subscription_id')
-RESOURCE_GROUP_NAME = get_parameter("C:\\Users\\Public\\azure_sdk_temp\\azure_sdk\\parameter.dev",'RESOURCE_GROUP_NAME')
-LOCATION = get_parameter("C:\\Users\\Public\\azure_sdk_temp\\azure_sdk\\parameter.dev",'LOCATION')
-VNET_NAME = get_parameter("C:\\Users\\Public\\azure_sdk_temp\\azure_sdk\\parameter.dev",'VNET_NAME')
-SUBNET_NAME = get_parameter("C:\\Users\\Public\\azure_sdk_temp\\azure_sdk\\parameter.dev",'SUBNET_NAME')
-IP_NAME = get_parameter("C:\\Users\\Public\\azure_sdk_temp\\azure_sdk\\parameter.dev",'IP_NAME')
-IP_CONFIG_NAME = get_parameter("C:\\Users\\Public\\azure_sdk_temp\\azure_sdk\\parameter.dev",'IP_CONFIG_NAME')
-NIC_NAME = get_parameter("C:\\Users\\Public\\azure_sdk_temp\\azure_sdk\\parameter.dev",'NIC_NAME')
+resource_group_name = get_parameter("C:\\Users\\Public\\azure_sdk_temp\\azure_sdk\\parameter.dev",'resource_group_name')
+location = get_parameter("C:\\Users\\Public\\azure_sdk_temp\\azure_sdk\\parameter.dev",'location')
+vnet_name = get_parameter("C:\\Users\\Public\\azure_sdk_temp\\azure_sdk\\parameter.dev",'vnet_name')
+subnet_name = get_parameter("C:\\Users\\Public\\azure_sdk_temp\\azure_sdk\\parameter.dev",'subnet_name')
+ip_name = get_parameter("C:\\Users\\Public\\azure_sdk_temp\\azure_sdk\\parameter.dev",'ip_name')
+ip_config_name = get_parameter("C:\\Users\\Public\\azure_sdk_temp\\azure_sdk\\parameter.dev",'ip_config_name')
+nic_name = get_parameter("C:\\Users\\Public\\azure_sdk_temp\\azure_sdk\\parameter.dev",'nic_name')
 address_space = get_parameter("C:\\Users\\Public\\azure_sdk_temp\\azure_sdk\\parameter.dev",'address_space')
 sub_address_prefix = get_parameter("C:\\Users\\Public\\azure_sdk_temp\\azure_sdk\\parameter.dev",'sub_address_prefix')
 ip_sku = get_parameter("C:\\Users\\Public\\azure_sdk_temp\\azure_sdk\\parameter.dev",'ip_sku')
 public_ip_allocation_method = get_parameter("C:\\Users\\Public\\azure_sdk_temp\\azure_sdk\\parameter.dev",'public_ip_allocation_method')
 public_ip_address_version = get_parameter("C:\\Users\\Public\\azure_sdk_temp\\azure_sdk\\parameter.dev",'public_ip_address_version')
-VM_NAME = get_parameter("C:\\Users\\Public\\azure_sdk_temp\\azure_sdk\\parameter.dev",'VM_NAME')
-VM_USERNAME = get_parameter("C:\\Users\\Public\\azure_sdk_temp\\azure_sdk\\parameter.dev",'VM_USERNAME')
-VM_PASSWORD = get_parameter("C:\\Users\\Public\\azure_sdk_temp\\azure_sdk\\parameter.dev",'VM_PASSWORD')
+vm_name = get_parameter("C:\\Users\\Public\\azure_sdk_temp\\azure_sdk\\parameter.dev",'vm_name')
+vm_username = get_parameter("C:\\Users\\Public\\azure_sdk_temp\\azure_sdk\\parameter.dev",'vm_username')
+vm_password = get_parameter("C:\\Users\\Public\\azure_sdk_temp\\azure_sdk\\parameter.dev",'vm_password')
 vm_publisher = get_parameter("C:\\Users\\Public\\azure_sdk_temp\\azure_sdk\\parameter.dev",'vm_publisher')
 vm_offer = get_parameter("C:\\Users\\Public\\azure_sdk_temp\\azure_sdk\\parameter.dev",'vm_offer')
 vm_sku = get_parameter("C:\\Users\\Public\\azure_sdk_temp\\azure_sdk\\parameter.dev",'vm_sku' )
@@ -40,21 +40,21 @@ vm_size = get_parameter("C:\\Users\\Public\\azure_sdk_temp\\azure_sdk\\parameter
 
 # Create VM
 create_vm(subscription_id,
-              RESOURCE_GROUP_NAME,
-              LOCATION,
-              VNET_NAME,
-              SUBNET_NAME,
-              IP_NAME,
-              IP_CONFIG_NAME,
-              NIC_NAME,
+              resource_group_name,
+              location,
+              vnet_name,
+              subnet_name,
+              ip_name,
+              ip_config_name,
+              nic_name,
               address_space,
               sub_address_prefix,
               ip_sku,
               public_ip_allocation_method,
               public_ip_address_version,
-              VM_NAME,
-              VM_USERNAME,
-              VM_PASSWORD,
+              vm_name,
+              vm_username,
+              vm_password,
               vm_publisher,
               vm_offer,
               vm_sku,
