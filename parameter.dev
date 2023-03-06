@@ -33,3 +33,9 @@ postgresql_administrator_login server
 postgresql_administrator_login_password vikas@123
 postgresql_database_name sdk_database
 postgresql_sku_name B_Gen5_2
+
+sql_server_name sqlserverdbdemo-123456
+sql_administrator_login server
+sql_administrator_login_password vikas@123
+sql_database_name sdk_database
+sql_sku_name B_Gen5_2
